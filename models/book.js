@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
-const Book = new mongoose.model('books',{
+const Book = mongoose.model('books',{
     Title: {
         type: String,
-        min: 1
+        
     },
 
     Author: {
