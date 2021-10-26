@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 const bookrouter = require('./routers/router')
 require('./db/mongoose')
-port = 2615
+const dotenv = require('dotenv')
+dotenv.config({path: './config/config.env' })
+port = process.env.PORT
 
 app.use(express.json())
 app.use(bookrouter)

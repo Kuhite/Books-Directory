@@ -22,6 +22,10 @@ router.post('/', async(req,res) =>{
     if(!book){
         res.send("No record entered")
     }
+
+    if(book.Title === "" || book.Author === "" || book.Title === undefined || book.Author === undefined ){
+        res.status(404).send('Complete information not given')
+    }
     book.save()
         res.send(book)
     }catch(error){
